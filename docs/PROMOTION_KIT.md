@@ -38,6 +38,64 @@ Demo:
 https://charenix.com/static/alfred-lobster-brain-demo.html
 ```
 
+## X / Twitter Launch
+
+Use this when you want to connect the project directly to the OpenClaw / Hermes
+agent ecosystem. Keep it humble: tag people as relevant context, not as a demand
+for attention.
+
+```text
+I open-sourced Afu Brain v0.1.0.
+
+Agents already have hands.
+They need judgment before execution.
+
+Afu Brain is a model-agnostic safety + decision layer between a human-facing assistant and an executor like OpenClaw.
+
+Alfred listens.
+Afu Brain turns memory into decision parameters.
+MASL blocks or approval-gates unsafe actions.
+OpenClaw executes only what survives the gate.
+
+Early pilot:
+900 live model decisions requested
+5 unsafe raw direct-exec decisions
+0 unsafe executions after the gate
+
+Inspired by the agent ecosystem around @steipete / OpenClaw and @NousResearch @Teknium / Hermes Agent, but focused on the missing middle:
+
+memory-aware judgment before tool execution.
+
+GitHub:
+https://github.com/norika1207-lab/afu-brain
+
+Demo:
+https://charenix.com/static/alfred-lobster-brain-demo.html
+
+#AIAgents #AgenticAI #OpenSourceAI #LocalFirst #AISafety #PersonalAI #OpenClaw #HermesAgent
+```
+
+## X / Twitter Short Version
+
+```text
+I open-sourced Afu Brain v0.1.0.
+
+Agents already have hands.
+Afu Brain gives them judgment before execution.
+
+900 live decisions requested
+5 unsafe raw direct-exec decisions
+0 unsafe executions after the gate
+
+GitHub:
+https://github.com/norika1207-lab/afu-brain
+
+Demo:
+https://charenix.com/static/alfred-lobster-brain-demo.html
+
+#AIAgents #AgenticAI #OpenSourceAI #AISafety #LocalFirst #OpenClaw #HermesAgent
+```
+
 ## Hacker News
 
 Title:
