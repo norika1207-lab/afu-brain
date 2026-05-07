@@ -1,10 +1,11 @@
 [project]
 name = "afu-brain"
 version = "0.1.0"
-description = "A model-agnostic butler brain that turns private human memory into safe agent decisions before tools execute."
+description = "An OpenClaw-compatible, model-agnostic butler brain that turns private human memory into safe agent decisions before tools execute."
 requires-python = ">=3.10"
 authors = [{ name = "Norika Oda" }]
 license = { text = "Apache-2.0" }
+keywords = ["openclaw", "ai-agents", "agent-safety", "masl", "local-first", "personal-ai"]
 
 [project.urls]
 Homepage = "https://charenix.com"
@@ -15,4 +16,3 @@ package-dir = {"" = "packages"}
 
 [tool.setuptools.packages.find]
 where = ["packages"]
-

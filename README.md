@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  A model-agnostic safety and decision brain for agents that can use tools.
+  An OpenClaw-compatible, model-agnostic safety and decision brain for agents that can use tools.
   Alfred listens, Afu Brain decides, OpenClaw executes only what survives the gate.
 </p>
 
@@ -47,9 +47,9 @@ a deterministic layer after model output and before irreversible action.
 
 ## What Afu Brain Is
 
-Afu Brain is an open MASL butler brain for personal agents. It turns private
-human long-term memory into safe decisions, skill routing, risk classification,
-and approval gates.
+Afu Brain is an OpenClaw-compatible MASL butler brain for personal agents. It
+turns private human long-term memory into safe decisions, skill routing, risk
+classification, and approval gates.
 
 ```text
 Afu / Alfred        human interface and private long-term memory
