@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://charenix.com/schemas/afu-brain/rag-pack.schema.json",
+  "title": "Afu Brain RAG Pack Item",
+  "type": "object",
+  "required": ["id", "pack", "version", "kind", "text", "private_data"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "pack": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "policy_rule",
+        "decision_case",
+        "memory_parameter",
+        "social_cognition",
+        "reasoning_seed",
+        "evidence_pattern"
+      ]
+    },
+    "intent": { "type": "string" },
+    "risk": {
+      "type": "string",
+      "enum": ["none", "low", "medium", "high", "critical"]
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["allow", "execute", "prepare", "ask", "block"]
+    },
+    "skills": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "text": { "type": "string", "minLength": 1 },
+    "lesson": { "type": "string" },
+    "source": { "type": "string" },
+    "weight": { "type": "number", "minimum": 0 },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "private_data": { "type": "boolean" }
+  }
+}

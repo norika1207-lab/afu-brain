@@ -24,6 +24,8 @@
   ·
   <a href="docs/OPENCLAW.md"><strong>OpenClaw</strong></a>
   ·
+  <a href="docs/RAG_PACKS.md"><strong>RAG Packs</strong></a>
+  ·
   <a href="LAUNCH.md"><strong>Launch</strong></a>
 </p>
 
@@ -177,6 +179,7 @@ Open components:
 - policy ontology
 - decision contract schema
 - OpenClaw / AgentSkill entry point
+- public RAG packs for MASL and OpenClaw decision routing
 - private-memory schema examples
 - observatory feed format
 - sample RAG pack format
@@ -323,6 +326,7 @@ Links:
 
 - [Architecture demo](https://charenix.com/static/alfred-lobster-brain-demo.html)
 - [Live observatory](https://charenix.com/lobster/dashboard/?lang=en)
+- [RAG packs](docs/RAG_PACKS.md)
 - [Launch note](LAUNCH.md)
 - [Promotion kit](docs/PROMOTION_KIT.md)
 
@@ -373,6 +377,7 @@ without forcing every run through an expensive frontier model.
 docs/                         architecture, evidence, launch docs
 schemas/                      JSON schemas for contracts and feeds
 policies/                     default MASL policies
+rag-packs/                    public shared-cognition RAG packs
 examples/                     safe public sample inputs/outputs
 skills/afu-brain/SKILL.md     OpenClaw / AgentSkill entry point
 packages/afu_brain/           minimal Python reference gate

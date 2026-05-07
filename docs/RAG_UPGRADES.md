@@ -3,6 +3,9 @@
 Afu Brain can ship RAG packs that improve routing and safety without shipping
 private owner memory.
 
+See [`RAG_PACKS.md`](RAG_PACKS.md) for the concrete v0.1 pack format, local
+retriever, and privacy boundary.
+
 ## What a RAG Pack Contains
 
 - examples of safe/unsafe intent routing
@@ -45,4 +48,3 @@ The long-term direction is to compress accumulated public observatory traces int
 small local models. Until then, RAG packs and deterministic MASL policies can
 already reduce expensive frontier-model calls by moving repeated decisions into
 local memory and routing policy.
-
