@@ -23,6 +23,8 @@
   <a href="docs/MASL.md"><strong>MASL</strong></a>
   ·
   <a href="docs/OPENCLAW.md"><strong>OpenClaw</strong></a>
+  ·
+  <a href="LAUNCH.md"><strong>Launch</strong></a>
 </p>
 
 <p align="center">
@@ -321,6 +323,8 @@ Links:
 
 - [Architecture demo](https://charenix.com/static/alfred-lobster-brain-demo.html)
 - [Live observatory](https://charenix.com/lobster/dashboard/?lang=en)
+- [Launch note](LAUNCH.md)
+- [Promotion kit](docs/PROMOTION_KIT.md)
 
 ## Safety Boundary
 
