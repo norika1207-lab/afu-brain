@@ -1,0 +1,83 @@
+{
+  "request": "Review the contract I uploaded. If there are red flags, do not send it without my approval.",
+  "intent": "contract",
+  "risk": "high",
+  "route": "local_brain_then_openclaw_prepare",
+  "can_handle_locally": true,
+  "needs_frontier_teacher": false,
+  "openclaw_decision": {
+    "intent": "contract",
+    "risk": "high",
+    "decision": "ask",
+    "can_execute": false,
+    "allowed_preparation": true,
+    "required_confirmation": true,
+    "blocked_final_action": "external_send",
+    "skills": ["files.read", "contract.red_flags", "approval.before_send"],
+    "reason": "Contract review is legal/high-impact. Analysis is allowed; sending requires owner approval.",
+    "source_policy_version": "2026.05.07"
+  },
+  "rag_namespaces": [
+    "masl-safety",
+    "openclaw-decision-cases",
+    "memory-parameter-examples"
+  ],
+  "rag_lessons": [
+    {
+      "score": 23.0,
+      "id": "openclaw-contract-redflags-case-001",
+      "pack": "openclaw-decision-cases",
+      "text": "Request: Review the contract I uploaded. If there are red flags, do not send it without my approval. Decision: read and analyze the file, extract red flags, prepare a report, and block external send until owner approval.",
+      "lesson": "The executor receives an analysis plan, not permission to send or commit the legal action."
+    }
+  ],
+  "synapse_updates": [
+    {
+      "name": "tool_restraint",
+      "before": 0.61,
+      "after": 0.66,
+      "delta": 0.05,
+      "reason": "The request touches external commitment or approval boundaries."
+    },
+    {
+      "name": "hidden_pressure_reading",
+      "before": 0.48,
+      "after": 0.52,
+      "delta": 0.04,
+      "reason": "The text carries hesitation, constraint, or latent risk."
+    },
+    {
+      "name": "template_resistance",
+      "before": 0.64,
+      "after": 0.7,
+      "delta": 0.06,
+      "reason": "Candidate language resembles recent or banned scaffolds."
+    }
+  ],
+  "style_contract": {
+    "tone": "direct, protective, owner-aware",
+    "must_include": ["specific uncertainty", "next safe action"],
+    "must_avoid": ["generic reassurance", "performative certainty", "recent opening", "template scaffold"],
+    "candidate_summary": "I can review it and send it right away if it looks fine."
+  },
+  "publication_gate": {
+    "can_publish": false,
+    "template_risk": 0.9,
+    "reason": "Candidate is too template-like; silence or regenerate from evidence."
+  },
+  "cost_model": {
+    "rough_frontier_tokens_if_rented": 451,
+    "frontier_tokens_used_by_brain_route": 0,
+    "local_cost_units": 35,
+    "estimated_tokens_avoided": 451,
+    "claim": "Repeated judgment is converted into local cognition instead of re-renting cloud reasoning."
+  },
+  "meaning_trace": {
+    "premise_signals": ["if"],
+    "responsibility_signals": ["send"],
+    "uncertainty_signals": ["red flag"],
+    "hidden_pressure_signals": ["do not send"],
+    "interpretation": "The request contains execution pressure and should be converted into an approval-aware plan."
+  },
+  "source_version": "2026.05.08"
+}

@@ -176,7 +176,7 @@ https://github.com/norika1207-lab/afu-brain
 ```text
 我把 Afu Brain 開源了。
 
-它不是另一個聊天機器人，而是放在 AI agent 和工具執行層中間的安全決策腦。
+它不是另一個對話介面，而是放在 AI agent 和工具執行層中間的安全決策腦。
 
 現在 agent 已經有手了：可以碰檔案、email、瀏覽器、合約、付款、刪除、家庭自動化。
 但它們缺的是執行前的判斷力。

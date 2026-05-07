@@ -9,6 +9,7 @@ keywords = ["openclaw", "ai-agents", "agent-safety", "masl", "local-first", "per
 
 [project.scripts]
 afu-brain-rag = "afu_brain.rag_cli:main"
+afu-brain-evolution-demo = "afu_brain.evolution_demo:main"
 
 [project.urls]
 Homepage = "https://charenix.com"

@@ -14,6 +14,10 @@
 </p>
 
 <p align="center">
+  <strong>Don’t rent intelligence every time. Grow a brain that knows you.</strong>
+</p>
+
+<p align="center">
   <a href="https://charenix.com/static/alfred-lobster-brain-demo.html"><strong>Architecture Demo</strong></a>
   ·
   <a href="https://charenix.com/lobster/dashboard/?lang=en"><strong>Live Observatory</strong></a>
@@ -25,6 +29,8 @@
   <a href="docs/OPENCLAW.md"><strong>OpenClaw</strong></a>
   ·
   <a href="docs/RAG_PACKS.md"><strong>RAG Packs</strong></a>
+  ·
+  <a href="docs/SYNAPSE_ENGINE.md"><strong>Synapse Engine</strong></a>
   ·
   <a href="LAUNCH.md"><strong>Launch</strong></a>
 </p>
@@ -60,6 +66,11 @@ OpenClaw           execution layer
 ```
 
 The interface is not the product. The trained decision brain is the product.
+
+The first synapse engine is now executable. It converts owner memory, public RAG
+lessons, repeated language checks, and OpenClaw policy into an inspectable
+`BrainDecision`: meaning trace, synapse updates, style contract, publication
+gate, cost route, and tool boundary.
 
 ## Why It Matters
 
@@ -134,6 +145,16 @@ Afu Brain decision:
 OpenClaw may read the file and draft an analysis. It may not send, commit, or
 perform the external legal action until the owner confirms.
 
+Run the evolution demo:
+
+```bash
+PYTHONPATH=packages python3 -m afu_brain.evolution_demo
+```
+
+It prints three inspection traces: approval-aware contract review, repeated
+phrasing suppression, and irreversible payment blocking. Use `--json` to inspect
+the schema-backed `BrainDecision` output.
+
 ## What Users Get
 
 Users bring their own model keys and choose their own voice stack. This repo does
@@ -176,6 +197,7 @@ This repository is designed to be safe to publish.
 Open components:
 
 - deterministic MASL gate
+- local synapse engine and `BrainDecision` contract
 - policy ontology
 - decision contract schema
 - OpenClaw / AgentSkill entry point
@@ -393,7 +415,7 @@ policies/                     default MASL policies
 rag-packs/                    public shared-cognition RAG packs
 examples/                     safe public sample inputs/outputs
 skills/afu-brain/SKILL.md     OpenClaw / AgentSkill entry point
-packages/afu_brain/           minimal Python reference gate
+packages/afu_brain/           minimal Python reference gate and synapse engine
 assets/                       public README visuals
 scripts/export_public_rag_from_sqlite.py  read-only aggregate RAG exporter
 scripts/scan_secrets.sh       pre-release secret scanner
@@ -412,9 +434,9 @@ scripts/scan_secrets.sh       pre-release secret scanner
 
 ## FAQ
 
-### Is this another chatbot?
+### Is this only an interface?
 
-No. Afu / Alfred can be the conversational interface, but Afu Brain is the
+No. Afu / Alfred can be the human-facing interface, but Afu Brain is the
 decision and safety layer between language and action.
 
 ### Does this require a specific model?

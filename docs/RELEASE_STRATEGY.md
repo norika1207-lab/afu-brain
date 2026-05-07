@@ -67,7 +67,7 @@ see immediately that this is not only a pretty dashboard.
 - model/API keys
 - voice assets
 - private logs
-- commercial hosted service credentials
+- hosted service credentials
 
 ## Why Open Source
 
@@ -78,8 +78,9 @@ legible as a new standard:
 private memory + shared brain + safe execution
 ```
 
-The open core builds trust. The hosted feed, managed observatory, commercial
-policy packs, and private deployment support remain future business surfaces.
+The open core builds trust by making the safety boundary and decision contract
+inspectable. Private deployments can extend the same contract without exposing
+owner memory, production logs, or deployment-specific strategy.
 
 ## Claims Discipline
 

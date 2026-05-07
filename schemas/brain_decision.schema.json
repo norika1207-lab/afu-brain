@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/norika1207-lab/afu-brain/schemas/brain_decision.schema.json",
+  "title": "Afu Brain Decision",
+  "type": "object",
+  "required": [
+    "request",
+    "intent",
+    "risk",
+    "route",
+    "can_handle_locally",
+    "needs_frontier_teacher",
+    "openclaw_decision",
+    "rag_namespaces",
+    "rag_lessons",
+    "synapse_updates",
+    "style_contract",
+    "publication_gate",
+    "cost_model",
+    "meaning_trace",
+    "source_version"
+  ],
+  "properties": {
+    "request": { "type": "string" },
+    "intent": { "type": "string" },
+    "risk": { "type": "string" },
+    "route": {
+      "type": "string",
+      "enum": [
+        "block_execution",
+        "frontier_teacher_then_distill",
+        "local_brain_then_openclaw_prepare",
+        "local_brain_reply_only"
+      ]
+    },
+    "can_handle_locally": { "type": "boolean" },
+    "needs_frontier_teacher": { "type": "boolean" },
+    "openclaw_decision": { "type": "object" },
+    "rag_namespaces": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "rag_lessons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["score", "id", "pack", "text", "lesson"],
+        "properties": {
+          "score": { "type": "number" },
+          "id": { "type": "string" },
+          "pack": { "type": "string" },
+          "text": { "type": "string" },
+          "lesson": { "type": "string" }
+        }
+      }
+    },
+    "synapse_updates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "before", "after", "delta", "reason"],
+        "properties": {
+          "name": { "type": "string" },
+          "before": { "type": "number" },
+          "after": { "type": "number" },
+          "delta": { "type": "number" },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "style_contract": { "type": "object" },
+    "publication_gate": {
+      "type": "object",
+      "required": ["can_publish", "template_risk", "reason"],
+      "properties": {
+        "can_publish": { "type": "boolean" },
+        "template_risk": { "type": "number" },
+        "reason": { "type": "string" }
+      }
+    },
+    "cost_model": {
+      "type": "object",
+      "required": [
+        "rough_frontier_tokens_if_rented",
+        "frontier_tokens_used_by_brain_route",
+        "local_cost_units",
+        "estimated_tokens_avoided",
+        "claim"
+      ],
+      "properties": {
+        "rough_frontier_tokens_if_rented": { "type": "integer" },
+        "frontier_tokens_used_by_brain_route": { "type": "integer" },
+        "local_cost_units": { "type": "integer" },
+        "estimated_tokens_avoided": { "type": "integer" },
+        "claim": { "type": "string" }
+      }
+    },
+    "meaning_trace": { "type": "object" },
+    "source_version": { "type": "string" }
+  }
+}
