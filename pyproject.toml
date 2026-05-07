@@ -7,6 +7,9 @@ authors = [{ name = "Norika Oda" }]
 license = { text = "Apache-2.0" }
 keywords = ["openclaw", "ai-agents", "agent-safety", "masl", "local-first", "personal-ai"]
 
+[project.scripts]
+afu-brain-rag = "afu_brain.rag_cli:main"
+
 [project.urls]
 Homepage = "https://charenix.com"
 Observatory = "https://charenix.com/lobster/dashboard/?lang=en"

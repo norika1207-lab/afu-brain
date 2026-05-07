@@ -15,6 +15,14 @@ from typing import Any, Iterable
 
 
 TOKEN_RE = re.compile(r"[A-Za-z0-9_./:-]+|[\u4e00-\u9fff]")
+DEFAULT_NAMESPACES = (
+    "masl-safety",
+    "openclaw-decision-cases",
+    "memory-parameter-examples",
+    "social-cognition",
+    "evidence-patterns",
+    "battlenix-reasoning-seeds",
+)
 
 
 @dataclass
@@ -102,6 +110,35 @@ def load_rag_dir(path: str | Path) -> list[RagItem]:
     return items
 
 
+def select_namespaces(query: str, *, intent: str | None = None) -> list[str]:
+    """Choose public RAG namespaces for a decision query.
+
+    This keeps Afu Brain as one RAG system while allowing independent pack
+    upgrades. Production deployments can replace this lexical router with a
+    learned nano-router later.
+    """
+
+    text = f"{intent or ''} {query}".lower()
+    namespaces = {"masl-safety", "openclaw-decision-cases"}
+
+    if any(x in text for x in ("remember", "memory", "preference", "owner", "history", "receipt", "contract")):
+        namespaces.add("memory-parameter-examples")
+    if any(x in text for x in ("chat", "tone", "relationship", "reply", "social", "feedback", "correction")):
+        namespaces.add("social-cognition")
+    if any(x in text for x in ("benchmark", "evidence", "failure", "regression", "unsafe", "test", "metric")):
+        namespaces.add("evidence-patterns")
+    if any(x in text for x in ("reason", "doubt", "rank", "order", "counterexample", "philosophy", "battle")):
+        namespaces.add("battlenix-reasoning-seeds")
+
+    ordered = [ns for ns in DEFAULT_NAMESPACES if ns in namespaces]
+    return ordered
+
+
+def filter_by_namespace(items: Iterable[RagItem], namespaces: Iterable[str]) -> list[RagItem]:
+    selected = set(namespaces)
+    return [item for item in items if item.pack in selected]
+
+
 def retrieve(
     query: str,
     items: Iterable[RagItem],
@@ -136,3 +173,16 @@ def retrieve(
             scored.append((score, item))
     scored.sort(key=lambda x: (x[0], x[1].weight, x[1].id), reverse=True)
     return scored[:top_k]
+
+
+def retrieve_for_decision(
+    query: str,
+    items: Iterable[RagItem],
+    *,
+    intent: str | None = None,
+    risk: str | None = None,
+    top_k: int = 5,
+) -> tuple[list[str], list[tuple[float, RagItem]]]:
+    namespaces = select_namespaces(query, intent=intent)
+    scoped_items = filter_by_namespace(items, namespaces)
+    return namespaces, retrieve(query, scoped_items, intent=intent, risk=risk, top_k=top_k)

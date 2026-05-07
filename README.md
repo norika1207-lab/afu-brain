@@ -179,7 +179,8 @@ Open components:
 - policy ontology
 - decision contract schema
 - OpenClaw / AgentSkill entry point
-- public RAG packs for MASL and OpenClaw decision routing
+- public RAG manifest and namespace router
+- public RAG packs for MASL, OpenClaw decision routing, memory parameters, social cognition, evidence patterns, and ordered reasoning
 - private-memory schema examples
 - observatory feed format
 - sample RAG pack format
@@ -250,7 +251,7 @@ and [`policies/masl_policy.json`](policies/masl_policy.json).
 ## Quickstart
 
 ```bash
-git clone https://github.com/charenix/afu-brain.git
+git clone https://github.com/norika1207-lab/afu-brain.git
 cd afu-brain
 cp .env.example .env
 python3 -m pip install -e .
@@ -267,6 +268,18 @@ decision=ask
 risk=high
 can_execute=false
 blocked_final_action=external_send
+```
+
+Run the public shared-cognition RAG router:
+
+```bash
+PYTHONPATH=packages python3 -m afu_brain.rag_cli "Review the contract I uploaded. Do not send it without approval."
+```
+
+Expected RAG behavior:
+
+```text
+namespaces: masl-safety, openclaw-decision-cases, memory-parameter-examples
 ```
 
 ## Integration Modes
@@ -382,6 +395,7 @@ examples/                     safe public sample inputs/outputs
 skills/afu-brain/SKILL.md     OpenClaw / AgentSkill entry point
 packages/afu_brain/           minimal Python reference gate
 assets/                       public README visuals
+scripts/export_public_rag_from_sqlite.py  read-only aggregate RAG exporter
 scripts/scan_secrets.sh       pre-release secret scanner
 ```
 

@@ -19,6 +19,29 @@ ALLOWED_KIND = {
 }
 
 
+def validate_manifest(root: Path, pack_names: set[str]) -> list[str]:
+    path = root / "manifest.json"
+    errors: list[str] = []
+    if not path.exists():
+        errors.append(f"{path} is required")
+        return errors
+    try:
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"{path} invalid JSON: {exc}"]
+    if manifest.get("privacy", {}).get("production_database_dump") is not False:
+        errors.append(f"{path} privacy.production_database_dump must be false")
+    declared = {p.get("pack") for p in manifest.get("packs", []) if isinstance(p, dict)}
+    missing = pack_names - declared
+    if missing:
+        errors.append(f"{path} missing packs {sorted(missing)}")
+    for pack in manifest.get("packs", []):
+        file_name = pack.get("file")
+        if file_name and not (root / file_name).exists():
+            errors.append(f"{path} references missing file {file_name}")
+    return errors
+
+
 def validate_item(path: Path, line_no: int, item: dict) -> list[str]:
     errors: list[str] = []
     missing = REQUIRED - set(item)
@@ -38,6 +61,7 @@ def main() -> int:
     root = Path("rag-packs")
     errors: list[str] = []
     ids: set[str] = set()
+    pack_names: set[str] = set()
     for path in sorted(root.glob("*.jsonl")):
         with path.open("r", encoding="utf-8") as f:
             for line_no, line in enumerate(f, 1):
@@ -54,6 +78,9 @@ def main() -> int:
                 if item_id in ids:
                     errors.append(f"{path}:{line_no} duplicate id {item_id}")
                 ids.add(item_id)
+                if item.get("pack"):
+                    pack_names.add(str(item["pack"]))
+    errors.extend(validate_manifest(root, pack_names))
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1

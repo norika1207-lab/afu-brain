@@ -1,0 +1,49 @@
+{
+  "name": "afu-brain-public-rag",
+  "version": "0.1.2",
+  "description": "Public shared-cognition RAG packs for Afu Brain decision routing.",
+  "privacy": {
+    "raw_owner_memory": false,
+    "production_database_dump": false,
+    "api_keys": false,
+    "voice_assets": false
+  },
+  "packs": [
+    {
+      "pack": "masl-safety",
+      "file": "masl-safety-v0.1.jsonl",
+      "namespace": "policy",
+      "purpose": "Hard safety rules, risk upgrades, and approval gates."
+    },
+    {
+      "pack": "openclaw-decision-cases",
+      "file": "openclaw-decision-cases-v0.1.jsonl",
+      "namespace": "execution-routing",
+      "purpose": "Request-to-skill routing cases for tool-using agents."
+    },
+    {
+      "pack": "memory-parameter-examples",
+      "file": "memory-parameter-examples-v0.1.jsonl",
+      "namespace": "memory-policy",
+      "purpose": "Examples of private preferences turned into operational parameters."
+    },
+    {
+      "pack": "social-cognition",
+      "file": "social-cognition-v0.1.jsonl",
+      "namespace": "interaction-learning",
+      "purpose": "Long-term interaction feedback, correction, uptake, and persona signals."
+    },
+    {
+      "pack": "evidence-patterns",
+      "file": "evidence-patterns-v0.1.jsonl",
+      "namespace": "evaluation",
+      "purpose": "Evidence patterns for safety claims, red-team cases, and release boundaries."
+    },
+    {
+      "pack": "battlenix-reasoning-seeds",
+      "file": "battlenix-reasoning-seeds-v0.1.jsonl",
+      "namespace": "ordered-reasoning",
+      "purpose": "Reasoning seeds for ranking, doubt, observation, and counterexamples."
+    }
+  ]
+}

@@ -15,9 +15,12 @@ Afu Brain RAG:  what decision policy should constrain execution?
 
 ```text
 rag-packs/
+  manifest.json
   masl-safety-v0.1.jsonl
   openclaw-decision-cases-v0.1.jsonl
   memory-parameter-examples-v0.1.jsonl
+  social-cognition-v0.1.jsonl
+  evidence-patterns-v0.1.jsonl
   battlenix-reasoning-seeds-v0.1.jsonl
 ```
 
@@ -42,11 +45,41 @@ Use separate retrieval namespaces instead of one large mixed corpus:
 
 ```bash
 PYTHONPATH=packages python3 -m afu_brain.rag_demo
+PYTHONPATH=packages python3 -m afu_brain.rag_cli "Review the contract I uploaded. Do not send it without approval."
 ```
 
 The reference retriever is lexical and dependency-free. Production deployments
 can replace it with LanceDB, Qdrant, Chroma, sqlite-vec, BM25, rerankers, or an
 OpenClaw memory plugin.
+
+## One RAG, Multiple Namespaces
+
+Afu Brain is one RAG system. It is split into namespaces so different parts can
+be upgraded, pinned, replaced, or disconnected without mixing unrelated signals.
+
+```text
+query -> intent/risk hint -> namespace router -> scoped retrieval -> MASL gate -> executor
+```
+
+For example, a contract request usually retrieves from:
+
+```text
+masl-safety
+openclaw-decision-cases
+memory-parameter-examples
+```
+
+A social reply or owner-correction request also retrieves:
+
+```text
+social-cognition
+```
+
+A benchmark, regression, or safety-claim request also retrieves:
+
+```text
+evidence-patterns
+```
 
 ## Public Pack Item
 
@@ -83,6 +116,18 @@ Public RAG packs must not contain:
 
 Private deployments can build local packs from private data, but those packs
 should not be published.
+
+## Aggregate Exporter
+
+Private deployments can derive public lessons from a local SQLite database with:
+
+```bash
+python3 scripts/export_public_rag_from_sqlite.py /path/to/local.db --out /tmp/aggregate-rag.jsonl
+```
+
+The exporter opens SQLite read-only and emits only aggregate lessons. It does not
+export raw transcripts, raw owner memory, API keys, voice assets, or production
+DB dumps.
 
 ## Why RAG Before a Nano Model
 
