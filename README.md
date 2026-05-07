@@ -32,6 +32,8 @@
   ·
   <a href="docs/SYNAPSE_ENGINE.md"><strong>Synapse Engine</strong></a>
   ·
+  <a href="docs/FILE_VAULT_RETRIEVAL.md"><strong>File Vault Retrieval</strong></a>
+  ·
   <a href="LAUNCH.md"><strong>Launch</strong></a>
 </p>
 
@@ -155,6 +157,15 @@ It prints three inspection traces: approval-aware contract review, repeated
 phrasing suppression, and irreversible payment blocking. Use `--json` to inspect
 the schema-backed `BrainDecision` output.
 
+Run the file vault retrieval demo:
+
+```bash
+PYTHONPATH=packages python3 -m afu_brain.file_vault_demo
+```
+
+It shows how Afu Brain ranks private file candidates while keeping file opening,
+sending, sharing, deletion, and provider content fetches behind confirmation.
+
 ## What Users Get
 
 Users bring their own model keys and choose their own voice stack. This repo does
@@ -198,6 +209,7 @@ Open components:
 
 - deterministic MASL gate
 - local synapse engine and `BrainDecision` contract
+- file vault retrieval contract for tool calling
 - policy ontology
 - decision contract schema
 - OpenClaw / AgentSkill entry point
@@ -415,7 +427,7 @@ policies/                     default MASL policies
 rag-packs/                    public shared-cognition RAG packs
 examples/                     safe public sample inputs/outputs
 skills/afu-brain/SKILL.md     OpenClaw / AgentSkill entry point
-packages/afu_brain/           minimal Python reference gate and synapse engine
+packages/afu_brain/           reference gate, synapse engine, and file vault retrieval
 assets/                       public README visuals
 scripts/export_public_rag_from_sqlite.py  read-only aggregate RAG exporter
 scripts/scan_secrets.sh       pre-release secret scanner

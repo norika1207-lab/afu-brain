@@ -22,6 +22,7 @@ DEFAULT_NAMESPACES = (
     "social-cognition",
     "evidence-patterns",
     "battlenix-reasoning-seeds",
+    "tool-calling-retrieval",
 )
 
 
@@ -129,6 +130,8 @@ def select_namespaces(query: str, *, intent: str | None = None) -> list[str]:
         namespaces.add("evidence-patterns")
     if any(x in text for x in ("reason", "doubt", "rank", "order", "counterexample", "philosophy", "battle")):
         namespaces.add("battlenix-reasoning-seeds")
+    if any(x in text for x in ("file", "document", "vault", "drive", "search", "tool", "檔案", "文件", "搜尋", "工具")):
+        namespaces.add("tool-calling-retrieval")
 
     ordered = [ns for ns in DEFAULT_NAMESPACES if ns in namespaces]
     return ordered

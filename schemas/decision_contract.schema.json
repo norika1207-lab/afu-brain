@@ -7,7 +7,7 @@
   "properties": {
     "intent": {
       "type": "string",
-      "enum": ["hearing", "mood", "clarify", "contract", "receipt", "email", "travel", "payment", "delete"]
+      "enum": ["hearing", "mood", "clarify", "contract", "file_search", "receipt", "email", "travel", "payment", "delete"]
     },
     "risk": {
       "type": "string",
@@ -48,4 +48,3 @@
   },
   "additionalProperties": true
 }
-

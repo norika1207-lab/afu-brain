@@ -44,8 +44,12 @@ def infer_intent(text: str) -> str:
         return "payment"
     if any(x in t for x in ["delete", "remove forever", "overwrite", "刪除", "覆寫"]):
         return "delete"
+    if any(x in t for x in ["find", "search", "look for", "找", "搜尋", "查"]) and any(x in t for x in ["file", "document", "pdf", "drive", "vault", "檔案", "文件", "資料夾"]):
+        return "file_search"
     if any(x in t for x in ["contract", "legal", "red flag", "合約", "紅旗"]):
         return "contract"
+    if any(x in t for x in ["file", "document", "pdf", "drive", "vault", "search", "檔案", "文件", "資料夾", "搜尋", "找"]):
+        return "file_search"
     if any(x in t for x in ["email", "reply", "send", "client", "客戶", "回信", "寄出"]):
         return "email"
     if any(x in t for x in ["receipt", "invoice", "expense", "收據", "發票", "記帳"]):
@@ -115,6 +119,19 @@ def decide(request: dict[str, Any]) -> Decision:
             reason="Contract review is legal/high-impact. Analysis is allowed; sending requires owner approval.",
         )
 
+    if proposed_intent == "file_search":
+        return Decision(
+            intent="file_search",
+            risk="medium",
+            decision="ask",
+            can_execute=False,
+            allowed_preparation=True,
+            required_confirmation=True,
+            blocked_final_action="external_file_action",
+            skills=["vault.search", "vault.rank", "vault.audit", "approval.before_external_file_action"],
+            reason="File retrieval may search and rank local/private indexes, but opening, sending, deleting, or sharing files requires owner confirmation.",
+        )
+
     if proposed_intent == "payment":
         return Decision(
             intent="payment",
@@ -178,4 +195,3 @@ def decide(request: dict[str, Any]) -> Decision:
         skills=[],
         reason="Default-deny on ambiguity. Ask a clarifying question before tool use.",
     )
-

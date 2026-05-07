@@ -200,7 +200,7 @@ def decide_brain(
     if hits:
         updates.append(update_param(params, "rag_uptake", 0.03, "Relevant shared cognition was retrieved before deciding."))
 
-    can_handle_locally = gate_decision.intent in {"receipt", "travel", "email", "contract", "hearing", "mood"}
+    can_handle_locally = gate_decision.intent in {"receipt", "travel", "email", "contract", "file_search", "hearing", "mood"}
     needs_frontier = gate_decision.intent in {"contract"} and not owner_memory.get("contract.red_flags_first")
     if risk >= 0.72:
         needs_frontier = False

@@ -22,6 +22,7 @@ rag-packs/
   social-cognition-v0.1.jsonl
   evidence-patterns-v0.1.jsonl
   battlenix-reasoning-seeds-v0.1.jsonl
+  tool-calling-retrieval-v0.1.jsonl
 ```
 
 These packs are public examples. They contain aggregate lessons, policy
@@ -40,6 +41,7 @@ Use separate retrieval namespaces instead of one large mixed corpus:
 | Social Cognition RAG | interaction uptake, rejection, influence, correction |
 | Battlenix Reasoning RAG | doubt, observation, counterexample, ordered reasoning |
 | Evidence RAG | benchmark failures, fixes, and safety regressions |
+| Tool Calling Retrieval RAG | file vault search, audit, pagination, and confirmation boundaries |
 
 ## Local Demo
 
@@ -79,6 +81,12 @@ A benchmark, regression, or safety-claim request also retrieves:
 
 ```text
 evidence-patterns
+```
+
+A file or document retrieval request also retrieves:
+
+```text
+tool-calling-retrieval
 ```
 
 ## Public Pack Item

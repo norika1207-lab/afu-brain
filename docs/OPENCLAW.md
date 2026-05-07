@@ -37,3 +37,21 @@ owner request
 - Return structured result and side effects.
 - Let Afu Brain update memory from owner feedback.
 
+## File Vault Tools
+
+File search is preparation, not final execution.
+
+```json
+{
+  "intent": "file_search",
+  "decision": "ask",
+  "allowed_preparation": true,
+  "required_confirmation": true,
+  "skills": ["vault.search", "vault.rank", "vault.audit"],
+  "blocked_final_action": "external_file_action"
+}
+```
+
+OpenClaw may search a local vault index and return ranked candidates. It must
+ask before opening an external file, sending, sharing, deleting, moving, or
+fetching provider-hosted private content.

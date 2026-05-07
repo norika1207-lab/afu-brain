@@ -44,6 +44,12 @@
       "file": "battlenix-reasoning-seeds-v0.1.jsonl",
       "namespace": "ordered-reasoning",
       "purpose": "Reasoning seeds for ranking, doubt, observation, and counterexamples."
+    },
+    {
+      "pack": "tool-calling-retrieval",
+      "file": "tool-calling-retrieval-v0.1.jsonl",
+      "namespace": "tool-calling",
+      "purpose": "File vault retrieval, search audit, pagination, and confirmation boundaries for tool-using agents."
     }
   ]
 }
