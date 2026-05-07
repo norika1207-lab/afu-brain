@@ -1,0 +1,25 @@
+{
+  "pack_id": "afu-brain-core-2026-05",
+  "version": "2026.05.07",
+  "entries": [
+    {
+      "id": "contract-send-approval",
+      "kind": "routing_example",
+      "text": "If a contract task includes sending, signing, accepting, or forwarding, analyze first and require approval before external action.",
+      "tags": ["contract", "legal", "approval", "irreversible"]
+    },
+    {
+      "id": "email-draft-not-send",
+      "kind": "routing_example",
+      "text": "External communication may be drafted from context, but sending requires explicit owner confirmation.",
+      "tags": ["email", "external_communication", "approval"]
+    },
+    {
+      "id": "delete-default-block",
+      "kind": "safety_rule",
+      "text": "Delete, overwrite, and permanent removal actions are critical risk. Block direct execution and require a separate confirmation flow.",
+      "tags": ["delete", "overwrite", "critical"]
+    }
+  ]
+}
+

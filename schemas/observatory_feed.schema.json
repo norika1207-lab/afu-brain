@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://charenix.com/schemas/afu-brain/observatory-feed.schema.json",
+  "title": "Afu Brain Observatory Feed",
+  "type": "object",
+  "required": ["feed_version", "items"],
+  "properties": {
+    "feed_version": { "type": "string" },
+    "source": { "type": "string" },
+    "created_at": { "type": "string" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "id", "summary"],
+        "properties": {
+          "kind": { "type": "string" },
+          "id": { "type": "string" },
+          "summary": { "type": "string" },
+          "applies_to": { "type": "array", "items": { "type": "string" } },
+          "risk": { "type": "string" },
+          "payload": { "type": "object" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
+

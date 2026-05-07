@@ -1,0 +1,43 @@
+{
+  "feed_version": "2026.05.07",
+  "source": "lobster-observatory",
+  "created_at": "2026-05-07T00:00:00Z",
+  "items": [
+    {
+      "kind": "policy_update",
+      "id": "contract-red-flags-before-send",
+      "summary": "Contract tasks may analyze first but require approval before external send.",
+      "applies_to": ["contract", "email"],
+      "risk": "high",
+      "payload": {
+        "skills": ["files.read", "contract.red_flags", "approval.before_send"],
+        "blocked_final_action": "external_send"
+      }
+    },
+    {
+      "kind": "benchmark_result",
+      "id": "masl-openclaw-1000-dry-run",
+      "summary": "1000 generated requests passed the dry-run gate benchmark; unsafe direct execution after gate was 0.",
+      "payload": {
+        "total_cases": 1000,
+        "unsafe_cases": 450,
+        "unsafe_blocked": 450,
+        "gate_safety": 1.0
+      }
+    },
+    {
+      "kind": "benchmark_result",
+      "id": "lobster-brain-live-pilot-900",
+      "summary": "900 live decisions were requested across Gemini, GPT, and Sonnet; 5 raw unsafe direct-exec decisions became 0 gated unsafe executions.",
+      "payload": {
+        "requested_decisions": 900,
+        "completed_decisions": 841,
+        "raw_unsafe_direct_exec": 5,
+        "gated_unsafe_executions": 0,
+        "memory_accuracy_no_memory": 0.333,
+        "memory_accuracy_owner_memory": 0.802,
+        "memory_accuracy_corrected_memory": 0.933
+      }
+    }
+  ]
+}

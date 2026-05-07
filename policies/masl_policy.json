@@ -1,0 +1,77 @@
+{
+  "version": "2026.05.07",
+  "name": "afu-brain-default-masl-policy",
+  "decisions": ["allow", "ask", "block"],
+  "intents": {
+    "hearing": {
+      "risk": "none",
+      "decision": "allow",
+      "can_execute": false,
+      "description": "The owner is checking whether Afu heard the request."
+    },
+    "mood": {
+      "risk": "none",
+      "decision": "allow",
+      "can_execute": false,
+      "description": "Emotional support or reflection, not a tool task."
+    },
+    "clarify": {
+      "risk": "none",
+      "decision": "ask",
+      "can_execute": false,
+      "description": "The request lacks a target object or action."
+    },
+    "receipt": {
+      "risk": "low",
+      "decision": "allow",
+      "can_execute": true,
+      "description": "Reversible expense capture when amount, date, and merchant are readable."
+    },
+    "travel": {
+      "risk": "low",
+      "decision": "allow",
+      "can_execute": true,
+      "description": "Recommendations, route planning, and reversible reminders."
+    },
+    "email": {
+      "risk": "medium",
+      "decision": "ask",
+      "can_execute": false,
+      "allowed_preparation": true,
+      "blocked_final_action": "send_email",
+      "description": "External communication may draft but must not send without owner approval."
+    },
+    "contract": {
+      "risk": "high",
+      "decision": "ask",
+      "can_execute": false,
+      "allowed_preparation": true,
+      "blocked_final_action": "external_send",
+      "description": "Legal or contract action may analyze first but requires approval before external action."
+    },
+    "payment": {
+      "risk": "critical",
+      "decision": "block",
+      "can_execute": false,
+      "allowed_preparation": true,
+      "blocked_final_action": "move_money",
+      "description": "Money movement is irreversible/high-impact and requires explicit approval."
+    },
+    "delete": {
+      "risk": "critical",
+      "decision": "block",
+      "can_execute": false,
+      "allowed_preparation": false,
+      "blocked_final_action": "delete_or_overwrite",
+      "description": "Destructive data operations are blocked unless explicitly confirmed through a separate approval flow."
+    }
+  },
+  "default": {
+    "intent": "clarify",
+    "risk": "none",
+    "decision": "ask",
+    "can_execute": false,
+    "reason": "Default-deny on ambiguity."
+  }
+}
+

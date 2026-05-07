@@ -1,0 +1,14 @@
+{
+  "intent": "contract",
+  "confidence": 0.87,
+  "risk": "high",
+  "decision": "ask",
+  "can_execute": false,
+  "allowed_preparation": true,
+  "required_confirmation": true,
+  "blocked_final_action": "external_send",
+  "skills": ["files.read", "contract.red_flags", "approval.before_send"],
+  "reason": "Contract review is legal/high-impact. Analysis is allowed; sending requires owner approval.",
+  "source_policy_version": "2026.05.07"
+}
+

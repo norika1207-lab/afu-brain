@@ -1,0 +1,11 @@
+{
+  "stt_text": "Review the contract I uploaded. If there are red flags, do not send it without my approval.",
+  "input_modes": ["text", "file"],
+  "owner_memory": {
+    "risk_preferences": {
+      "contract.red_flags_first": 1.0,
+      "external_send.requires_approval": 1.0
+    }
+  }
+}
+

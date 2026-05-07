@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://charenix.com/schemas/afu-brain/owner-memory.schema.json",
+  "title": "Private Owner Memory",
+  "type": "object",
+  "properties": {
+    "owner_id": { "type": "string" },
+    "preferences": { "type": "object" },
+    "relationships": { "type": "object" },
+    "promises": { "type": "array", "items": { "type": "object" } },
+    "risk_preferences": { "type": "object" },
+    "skill_preferences": { "type": "object" },
+    "feedback": { "type": "array", "items": { "type": "object" } }
+  },
+  "additionalProperties": true
+}
+

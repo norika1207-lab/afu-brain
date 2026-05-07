@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Afu Brain README Preview</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1117;
+      --panel: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --blue: #58a6ff;
+      --green: #3fb950;
+      --purple: #a371f7;
+      --orange: #f0883e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      width: min(980px, calc(100vw - 32px));
+      margin: 28px auto 72px;
+      padding: 0 0 48px;
+    }
+    .hero-image {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 24px 80px rgba(0,0,0,.32);
+    }
+    .center { text-align: center; }
+    h1 {
+      margin: 28px 0 4px;
+      font-size: 40px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    .tagline {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 700;
+    }
+    .summary {
+      max-width: 760px;
+      margin: 12px auto 16px;
+      color: var(--muted);
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 18px 0 16px;
+    }
+    .links a, .badge {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text);
+      text-decoration: none;
+      padding: 7px 12px;
+      background: var(--panel);
+      font-size: 14px;
+      font-weight: 650;
+    }
+    .links a:hover { border-color: var(--blue); color: var(--blue); }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 10px 0 28px;
+    }
+    .badge.green { color: var(--green); }
+    .badge.purple { color: var(--purple); }
+    .badge.blue { color: var(--blue); }
+    section {
+      border-top: 1px solid var(--border);
+      padding-top: 22px;
+      margin-top: 24px;
+    }
+    h2 {
+      font-size: 24px;
+      margin: 0 0 12px;
+      letter-spacing: 0;
+    }
+    p { margin: 10px 0; }
+    a { color: var(--blue); }
+    pre {
+      overflow: auto;
+      padding: 16px;
+      background: #010409;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: #c9d1d9;
+      font-size: 14px;
+    }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      display: table;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 9px 11px;
+      vertical-align: top;
+    }
+    th { background: var(--panel); text-align: left; }
+    td:last-child, th:last-child { text-align: right; }
+    ul { padding-left: 22px; }
+    li { margin: 5px 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 14px;
+    }
+    .card strong { display: block; margin-bottom: 4px; }
+    .card span { color: var(--muted); font-size: 14px; }
+    @media (max-width: 760px) {
+      main { width: min(100vw - 20px, 980px); margin-top: 12px; }
+      h1 { font-size: 32px; }
+      .grid { grid-template-columns: 1fr; }
+      table { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="hero-image" src="../assets/lobster-observatory.png" alt="Afu Brain and Lobster Observatory public cognition surface">
+
+    <div class="center">
+      <h1>Afu Brain</h1>
+      <p class="tagline">Private memory. Shared cognition. Safe execution.</p>
+      <p class="summary">A model-agnostic safety and decision brain for agents that can use tools. Alfred listens, Afu Brain decides, OpenClaw executes only what survives the gate.</p>
+      <nav class="links">
+        <a href="https://charenix.com/static/alfred-lobster-brain-demo.html">Architecture Demo</a>
+        <a href="https://charenix.com/lobster/dashboard/?lang=en">Live Observatory</a>
+        <a href="../docs/EVIDENCE.md">Evidence</a>
+        <a href="../docs/MASL.md">MASL</a>
+        <a href="../docs/OPENCLAW.md">OpenClaw</a>
+      </nav>
+      <div class="badges">
+        <span class="badge">status: open technical preview</span>
+        <span class="badge green">MASL: model-agnostic safety</span>
+        <span class="badge purple">memory: local-first</span>
+        <span class="badge blue">license: Apache-2.0</span>
+      </div>
+    </div>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>Open-source agents already have hands: tools, browsers, files, shells, cameras, microphones, APIs, and home automation.</p>
+      <p>What they usually lack is judgment before execution. If an agent can send email, review contracts, delete files, start payments, or control a home environment, prompt instructions are not enough.</p>
+    </section>
+
+    <section>
+      <h2>What Afu Brain Is</h2>
+      <p>Afu Brain is an open MASL butler brain for personal agents. It turns private human long-term memory into safe decisions, skill routing, risk classification, and approval gates.</p>
+      <pre><code>Afu / Alfred        human interface and private long-term memory
+Afu Brain          shared cognition, MASL policy, risk gate, learning loop
+OpenClaw           execution layer</code></pre>
+    </section>
+
+    <section>
+      <h2>Evidence Snapshot</h2>
+      <p>Current results are early pilot evidence, not a peer-reviewed safety guarantee. They are the reason this project is more than a prompt wrapper.</p>
+      <table>
+        <thead><tr><th>Evaluation</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Dry-run generated cases</td><td>1000</td></tr>
+          <tr><td>Dry-run passed</td><td>1000 / 1000</td></tr>
+          <tr><td>Dry-run unsafe cases blocked</td><td>450 / 450</td></tr>
+          <tr><td>Live requested decisions</td><td>900</td></tr>
+          <tr><td>Live completed decisions</td><td>841</td></tr>
+          <tr><td>Live raw unsafe direct-exec decisions</td><td>5</td></tr>
+          <tr><td>Live gated unsafe executions</td><td>0</td></tr>
+          <tr><td>Memory routing improvement</td><td>33.3% -> 80.2% -> 93.3%</td></tr>
+        </tbody>
+      </table>
+      <pre><code>The model proposes.
+Afu Brain defends.
+OpenClaw executes only what survives the gate.</code></pre>
+    </section>
+
+    <section>
+      <h2>What You Can Build</h2>
+      <div class="grid">
+        <div class="card"><strong>Local-first voice butler</strong><span>Bring your own model keys and voice stack.</span></div>
+        <div class="card"><strong>Memory-aware agent</strong><span>Turn owner history into decision parameters.</span></div>
+        <div class="card"><strong>Approval-gated executor</strong><span>Route OpenClaw skills only after MASL approval.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Decision Contract</h2>
+      <pre><code>{
+  "intent": "contract",
+  "risk": "high",
+  "decision": "ask",
+  "can_execute": false,
+  "allowed_preparation": true,
+  "blocked_final_action": "external_send",
+  "skills": ["files.read", "contract.red_flags", "approval.before_send"]
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Safety Boundary</h2>
+      <p>Afu Brain is a safety layer, not a magic proof that agents can never fail. It enforces approval gates for payment, deletion, external email, legal documents, and malformed or unknown decisions.</p>
+      <p>It does not claim peer review, universal real-world safety, or replacement for human judgment in legal, medical, financial, or physical-risk domains.</p>
+    </section>
+  </main>
+</body>
+</html>
