@@ -10,6 +10,12 @@ Agents already have hands.
 Afu Brain gives them judgment before execution.
 ```
 
+```text
+Models can propose.
+Tools can act.
+Afu Brain decides whether action should happen at all.
+```
+
 ## Short Post
 
 ```text
@@ -30,6 +36,7 @@ Live pilot:
 900 model decisions requested
 5 unsafe raw direct-exec decisions
 0 unsafe executions after the gate
+8 live decision-simulation arenas feeding pressure-tested lessons
 
 GitHub:
 https://github.com/norika1207-lab/afu-brain
@@ -61,6 +68,7 @@ Early pilot:
 900 live model decisions requested
 5 unsafe raw direct-exec decisions
 0 unsafe executions after the gate
+8 live decision-simulation arenas for uncertainty, feedback, and correction loops
 
 Inspired by the agent ecosystem around @steipete / OpenClaw and @NousResearch @Teknium / Hermes Agent, but focused on the missing middle:
 
@@ -86,6 +94,7 @@ Afu Brain gives them judgment before execution.
 900 live decisions requested
 5 unsafe raw direct-exec decisions
 0 unsafe executions after the gate
+8 live decision-simulation arenas
 
 GitHub:
 https://github.com/norika1207-lab/afu-brain

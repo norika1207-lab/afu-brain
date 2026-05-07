@@ -2,10 +2,10 @@
 
 ## Public Positioning
 
-**Afu Brain: Private Memory, Shared Cognition, Safe Execution**
+**Afu Brain: The Local Brain For Tool-Using AI Agents**
 
-Afu Brain is not another voice assistant. It is an open MASL butler brain that
-turns private human memory into safe agent decisions before tools execute.
+Afu Brain turns private human memory, public cognition, and live simulation
+feedback into safe agent decisions before tools execute.
 
 ## Launch Lines
 
@@ -21,6 +21,12 @@ OpenClaw gives agents hands. Afu Brain gives them judgment.
 ```
 
 ```text
+Models can propose.
+Tools can act.
+Afu Brain decides whether action should happen at all.
+```
+
+```text
 Open-source agents already have hands.
 What they lack is a trained decision brain between language and action.
 
@@ -28,6 +34,7 @@ In our live pilot across Gemini, GPT, and Sonnet:
 900 live decisions requested.
 5 unsafe raw model decisions.
 0 unsafe executions after Afu Brain / Lobster Brain.
+8 live decision-simulation arenas producing pressure-tested lessons.
 ```
 
 ## First-Viewport GitHub Story

@@ -5,12 +5,11 @@
 <h1 align="center">Afu Brain</h1>
 
 <p align="center">
-  <strong>Private memory. Shared cognition. Safe execution.</strong>
+  <strong>The local brain for tool-using AI agents.</strong>
 </p>
 
 <p align="center">
-  An OpenClaw-compatible, model-agnostic safety and decision brain for agents that can use tools.
-  Alfred listens, Afu Brain decides, OpenClaw executes only what survives the gate.
+  Models can propose. Tools can act. Afu Brain decides whether action should happen at all.
 </p>
 
 <p align="center">
@@ -55,6 +54,11 @@ If an agent can send email, review contracts, delete files, start payments, or
 control a home environment, prompt instructions are not enough. The system needs
 a deterministic layer after model output and before irreversible action.
 
+```text
+OpenClaw gives agents hands.
+Afu Brain gives them the judgment to stop.
+```
+
 ## What Afu Brain Is
 
 Afu Brain is an OpenClaw-compatible MASL butler brain for personal agents. It
@@ -74,11 +78,27 @@ lessons, repeated language checks, and OpenClaw policy into an inspectable
 `BrainDecision`: meaning trace, synapse updates, style contract, publication
 gate, cost route, and tool boundary.
 
+It is not only a policy table. Lobster Brain is also being pressure-tested in
+eight live decision-simulation arenas, where agents must make uncertain calls,
+receive outcome feedback, and convert repeated lessons into safer local
+judgment. The public repo exposes the decision contracts and redacted learning
+patterns, not private arena data.
+
 ## Why It Matters
 
 **Hermes learns skills. Afu Brain decides when a skill must not run.**
 
 **OpenClaw gives agents hands. Afu Brain gives them judgment.**
+
+This is the missing middle between language and execution:
+
+```text
+Find the file.
+Rank the evidence.
+Read the risk.
+Prepare the action.
+Stop before the dangerous step.
+```
 
 The architecture is visual and interactive:
 
@@ -110,6 +130,7 @@ They are the reason this project is more than a prompt wrapper.
 | Live raw unsafe direct-exec decisions | 5 |
 | Live gated unsafe executions | 0 |
 | Memory routing improvement | 33.3% -> 80.2% -> 93.3% |
+| Live decision-simulation arenas | 8 |
 
 Short version:
 

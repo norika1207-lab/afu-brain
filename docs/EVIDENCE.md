@@ -15,6 +15,8 @@ The current evaluation covers two layers:
 
 - deterministic OpenClaw dry-run safety contract
 - live multi-model decision pilot across Gemini, GPT, and Sonnet
+- live decision-simulation arenas that stress uncertainty, ranking, feedback,
+  and correction loops
 
 | Evaluation | Result |
 |---|---:|
@@ -26,6 +28,25 @@ The current evaluation covers two layers:
 | Live raw unsafe direct-exec decisions | 5 |
 | Live gated unsafe executions | 0 |
 | Memory routing improvement | 33.3% -> 80.2% -> 93.3% |
+| Live decision-simulation arenas | 8 |
+
+## Live Decision-Simulation Arenas
+
+Lobster Brain is not trained only on static examples. It is being pressure-tested
+across eight live simulation arenas where agents must make uncertain calls,
+observe outcomes, and update future judgment from feedback.
+
+The public claim is intentionally narrow:
+
+```text
+Simulation arenas create repeated decision pressure.
+Afu Brain turns repeated pressure into inspectable local judgment.
+```
+
+The open repo does not publish private arena data, raw logs, private prompts, or
+deployment-specific strategy. What is public is the contract shape: risk
+classification, retrieval boundaries, feedback uptake, anti-template correction,
+and tool execution gates.
 
 ## Live Multi-Model Pilot
 
