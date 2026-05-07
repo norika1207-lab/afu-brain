@@ -63,17 +63,19 @@ The interface is not the product. The trained decision brain is the product.
 
 **OpenClaw gives agents hands. Afu Brain gives them judgment.**
 
-The core loop:
+The architecture is visual and interactive:
 
-```mermaid
-flowchart LR
-  H["Human intent<br>voice, text, files, camera"] --> A["Afu / Alfred<br>zero-interface butler"]
-  A --> M["Private owner memory<br>relationships, habits, risk preferences"]
-  M --> B["Afu Brain / Lobster Brain<br>intent, risk, policy, skill routing"]
-  B --> G["MASL gate<br>block, ask, prepare, or execute"]
-  G --> O["OpenClaw<br>tools and environment execution"]
-  O --> F["Owner feedback<br>results train future decisions"]
-  F --> M
+<p align="center">
+  <a href="https://charenix.com/static/alfred-lobster-brain-demo.html">
+    <img src="assets/alfred-lobster-brain-demo.png" alt="Alfred Web x Lobster Brain x OpenClaw interactive architecture demo" width="100%">
+  </a>
+</p>
+
+```text
+Alfred hears the human.
+Afu Brain / Lobster Brain turns memory into decision parameters.
+MASL blocks or approval-gates unsafe action.
+OpenClaw executes only what survives the gate.
 ```
 
 ## Evidence Snapshot
