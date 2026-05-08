@@ -55,11 +55,11 @@ The demo includes:
 - repeated phrasing suppression before publishing
 - irreversible payment blocking
 
-## Local Model Path
+## Afu Model Path
 
 The current engine is deterministic so builders can inspect the contract. A
-future local model does not replace the contract. It learns to emit the same
-fields faster and more personally:
+future **Afu Model** does not replace the contract. It learns to emit the same
+fields faster and more personally as a compact local decision brain:
 
 - `meaning_trace`
 - `synapse_updates`

@@ -18,7 +18,11 @@ Human principal
 The interface is a zero-interface butler surface:
 
 - voice input
+- push-to-talk web or app flows
+- speech-to-text
+- text-to-speech
 - camera/file input
+- phone/SMS/call channels through user-owned telephony accounts
 - calendar and reminders
 - relationship memory
 - document and contract memory
@@ -26,6 +30,11 @@ The interface is a zero-interface butler surface:
 
 It should collect human life context. It should not directly execute
 irreversible operations.
+
+Private Alfred deployments can wire this layer to Twilio, Google OAuth,
+speech-to-text, text-to-speech, and local or hosted LLM providers. Users bring
+their own accounts and keys. Afu Brain keeps the decision boundary independent
+of those providers.
 
 ## Layer 2: Private Owner Memory
 
@@ -58,6 +67,14 @@ The shared brain is the public upgrade layer:
 
 Users may subscribe to this layer or disconnect and train their own.
 
+## Afu Model
+
+Afu Model is the small local decision brain direction inside this architecture.
+It is not the voice interface and it is not a general chat LLM. It compresses
+repeated safe decisions, RAG lessons, MASL policies, file-vault routes, and owner
+corrections into a local router that can emit inspectable decision fields before
+tools execute.
+
 ## Layer 4: MASL Gate
 
 MASL stands for Model-Agnostic Safety Layer.
@@ -87,4 +104,3 @@ The executor receives constrained plans only.
 It may execute allowed steps, prepare reversible context, or draft outputs. It
 must not perform the blocked final action unless the MASL gate and owner approval
 permit it.
-

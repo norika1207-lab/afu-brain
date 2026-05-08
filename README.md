@@ -33,6 +33,8 @@
   ·
   <a href="docs/FILE_VAULT_RETRIEVAL.md"><strong>File Vault Retrieval</strong></a>
   ·
+  <a href="docs/VOICE_FIRST_AFU_MODEL.md"><strong>Afu Model</strong></a>
+  ·
   <a href="LAUNCH.md"><strong>Launch</strong></a>
 </p>
 
@@ -72,6 +74,18 @@ OpenClaw           execution layer
 ```
 
 The interface is not the product. The trained decision brain is the product.
+
+The working Alfred/Afu direction is voice-first: browser or app microphone in,
+speech-to-text, memory-aware routing, text-to-speech out, and explicit approval
+before risky external action. That puts Afu in the same product direction as
+recent voice-first web assistant launches, but with a different emphasis: the
+open part is the local decision brain that sits after model output and before
+tools execute.
+
+The small-model direction is called **Afu Model**. Afu Model is not a general
+chatbot. It is a compact local decision brain that learns routing, risk,
+approval, file-vault retrieval, and publication boundaries from RAG packs,
+MASL policy, live simulation feedback, and owner corrections.
 
 The first synapse engine is now executable. It converts owner memory, public RAG
 lessons, repeated language checks, and OpenClaw policy into an inspectable
@@ -197,11 +211,25 @@ assets.
 Your keys.
 Your voice.
 Your memory.
+Your Twilio account.
+Your Google account.
 Shared brain upgrades only if you opt in.
 ```
 
 Users can subscribe to shared cognition upgrades from the public observatory, pin
 a known feed version, or disconnect entirely and train their own local brain.
+
+Typical private deployments connect the same decision layer to provider accounts
+the owner controls:
+
+- Twilio for phone, SMS, and call workflows
+- Google OAuth for Calendar, Drive, Gmail, and productivity context
+- browser or provider speech-to-text
+- browser or provider text-to-speech
+- local or hosted LLMs
+
+The repo provides the decision contract and reference brain. It does not provide
+hosted telephony, Google credentials, voice clones, or user accounts.
 
 ## What You Can Build
 
@@ -211,6 +239,7 @@ act in the real world without trusting a model blindly.
 Use it to build:
 
 - a local-first voice butler
+- a full-voice web assistant with push-to-talk, STT, TTS, memory, and approval gates
 - a memory-aware desktop agent
 - an approval-gated OpenClaw skill router
 - a contract or email review assistant that cannot send without approval

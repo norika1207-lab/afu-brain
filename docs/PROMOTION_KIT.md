@@ -16,21 +16,33 @@ Tools can act.
 Afu Brain decides whether action should happen at all.
 ```
 
+```text
+Afu / Alfred is voice-first: speak to the assistant, let it reason over memory,
+then let the decision brain decide what can safely happen.
+
+Twilio, Google, STT/TTS, and model providers are bring-your-own-account.
+The open-source repo publishes the brain and safety contract, not private keys.
+```
+
 ## Short Post
 
 ```text
 I open-sourced Afu Brain.
 
 It is a model-agnostic safety and decision layer for tool-using agents.
+It grew out of a working voice-first Alfred/Afu butler flow.
 
 The idea is simple:
 Agents already have hands.
 They need judgment before execution.
 
 Alfred listens.
-Afu Brain turns memory into decision parameters.
+Afu Model / Afu Brain turns memory into decision parameters.
 MASL blocks or approval-gates unsafe action.
 OpenClaw executes only what survives the gate.
+
+Voice, phone, SMS, calendar, Drive, Gmail, STT/TTS, and model providers are
+bring-your-own-account. The repo does not ship Twilio or Google credentials.
 
 Live pilot:
 900 model decisions requested
@@ -60,9 +72,13 @@ They need judgment before execution.
 Afu Brain is a model-agnostic safety + decision layer between a human-facing assistant and an executor like OpenClaw.
 
 Alfred listens.
-Afu Brain turns memory into decision parameters.
+Afu Model / Afu Brain turns memory into decision parameters.
 MASL blocks or approval-gates unsafe actions.
 OpenClaw executes only what survives the gate.
+
+The voice-first interface was already working privately before Google-style
+voice-first web assistants became this week's obvious product direction. The
+open-source piece is the local decision brain behind that interface.
 
 Early pilot:
 900 live model decisions requested
@@ -145,6 +161,10 @@ assistant interface and the executor.
 It classifies intent/risk, upgrades unsafe actions, requires approval before
 external action, and returns a structured decision contract.
 
+The private Alfred deployment is voice-first and can connect to user-owned
+providers such as Twilio and Google. The open repo intentionally keeps those
+credentials and private memories out of source control.
+
 Repo:
 https://github.com/norika1207-lab/afu-brain
 
@@ -193,9 +213,11 @@ https://github.com/norika1207-lab/afu-brain
 Afu Brain 的位置是：
 
 Alfred 聽懂人類。
-Afu Brain 把長期記憶轉成決策參數。
+Afu Model / Afu Brain 把長期記憶轉成決策參數。
 MASL 擋下或 approval-gate 高風險行動。
 OpenClaw 只執行通過 gate 的動作。
+
+阿福本來就是 voice-first：使用者可以用網頁或 App 說話，阿福聽、判斷、回答，再決定哪些工具可以動。Twilio、Google、STT/TTS、模型供應商都採用 BYO account / BYO key；開源 repo 不附私人金鑰、不附電話號碼、不附 Google OAuth token。
 
 目前 pilot：
 900 個 live model decisions
