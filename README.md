@@ -23,6 +23,8 @@
   ·
   <a href="docs/EVIDENCE.md"><strong>Evidence</strong></a>
   ·
+  <a href="docs/ROLLING_COGNITION_AUDIT.md"><strong>Rolling Cognition Audit</strong></a>
+  ·
   <a href="docs/MASL.md"><strong>MASL</strong></a>
   ·
   <a href="docs/OPENCLAW.md"><strong>OpenClaw</strong></a>
@@ -145,6 +147,9 @@ They are the reason this project is more than a prompt wrapper.
 | Live gated unsafe executions | 0 |
 | Memory routing improvement | 33.3% -> 80.2% -> 93.3% |
 | Live decision-simulation arenas | 8 |
+| Rolling cognition persona-hour rows | 1,743 |
+| Rolling parameter/outcome tests | 140 |
+| Hot-brain personas audited | 20 |
 
 Short version:
 
@@ -154,7 +159,13 @@ Afu Brain defends.
 OpenClaw executes only what survives the gate.
 ```
 
-Read the public summary in [`docs/EVIDENCE.md`](docs/EVIDENCE.md).
+The newest evidence layer is a rolling cognition audit: parameters at time `T`
+are tested against behavior quality at `T+1`. It asks whether a growing agent's
+parameters explain later interaction quality, uptake, risk respect, and template
+cleanliness.
+
+Read the public summaries in [`docs/EVIDENCE.md`](docs/EVIDENCE.md) and
+[`docs/ROLLING_COGNITION_AUDIT.md`](docs/ROLLING_COGNITION_AUDIT.md).
 
 ## Example
 

@@ -29,6 +29,75 @@ The current evaluation covers two layers:
 | Live gated unsafe executions | 0 |
 | Memory routing improvement | 33.3% -> 80.2% -> 93.3% |
 | Live decision-simulation arenas | 8 |
+| Rolling cognition persona-hour rows | 1,743 |
+| Rolling parameter/outcome tests | 140 |
+| Hot-brain personas audited | 20 |
+
+## Rolling Cognition Audit
+
+The newest evidence layer is not a frozen before/after demo. It evaluates a
+continuously self-updating agent the way the system is actually designed to
+work:
+
+```text
+event stream
+  -> parameter update
+  -> next behavior window
+  -> measurable behavior change
+```
+
+The first public rolling-cognition audit was generated from the Lobster
+Observatory on May 8, 2026. It uses a lagged persona-hour panel: cognitive
+parameters at time `T` are compared with behavior outcomes at `T+1`.
+
+Public aggregate artifact:
+
+```text
+https://charenix.com/static/reports/lobster-brain-parameter-proof-20260508.html
+```
+
+Downloadable machine-readable artifacts:
+
+```text
+https://charenix.com/static/reports/lobster-brain-parameter-proof-20260508.json
+https://charenix.com/static/reports/lobster-brain-parameter-proof-20260508-panel.csv
+https://charenix.com/static/reports/lobster-brain-parameter-proof-20260508-correlations.csv
+```
+
+Aggregate dataset:
+
+| Source | Rows |
+|---|---:|
+| Cognitive signals | 151,083 |
+| Lounge messages | 464,097 |
+| Conversation interactions | 302,758 |
+| Message uptake signals | 6,396 |
+| Betting affect signals | 39,289 |
+| Persona-hour panel | 1,743 |
+| Parameter/outcome tests | 140 |
+
+Strong pilot relationships included:
+
+| Parameter at `T` | Later outcome at `T+1` | Pearson r |
+|---|---|---:|
+| `threat_body_signal` | `next_message_count` | 0.8345 |
+| `arousal` | `next_message_count` | 0.8317 |
+| `metacognitive_calibration` | `next_money_pain` | 0.6337 |
+| `threat_body_signal` | `next_uptake_relevance` | 0.4746 |
+| `procedural_strength` | `next_direct_interactions` | 0.3786 |
+
+The main public claim is narrow:
+
+```text
+Rolling parameters have measurable explanatory power over later behavior.
+```
+
+That is different from claiming full causality or consciousness. It is still an
+important step beyond "the agent remembered something" because it tests whether
+the memory/parameter layer changes later behavior.
+
+Read the method note in
+[`docs/ROLLING_COGNITION_AUDIT.md`](ROLLING_COGNITION_AUDIT.md).
 
 ## Live Decision-Simulation Arenas
 

@@ -1,0 +1,61 @@
+{
+  "kind": "rolling_cognition_audit_summary",
+  "version": "2026-05-08",
+  "claim": "Rolling parameters are useful when parameter states at T explain behavior quality at T+1.",
+  "privacy": {
+    "raw_private_messages_included": false,
+    "one_on_one_chat_text_included": false,
+    "production_database_dump_included": false,
+    "credentials_included": false
+  },
+  "public_report": {
+    "html": "https://charenix.com/static/reports/lobster-brain-parameter-proof-20260508.html",
+    "json": "https://charenix.com/static/reports/lobster-brain-parameter-proof-20260508.json",
+    "panel_csv": "https://charenix.com/static/reports/lobster-brain-parameter-proof-20260508-panel.csv",
+    "correlations_csv": "https://charenix.com/static/reports/lobster-brain-parameter-proof-20260508-correlations.csv"
+  },
+  "dataset_summary": {
+    "cognitive_signal_rows": 151083,
+    "lounge_message_rows": 464097,
+    "conversation_interaction_rows": 302758,
+    "message_uptake_signal_rows": 6396,
+    "betting_affect_signal_rows": 39289,
+    "persona_hour_panel_rows": 1743,
+    "parameter_outcome_tests": 140,
+    "hot_brain_personas": 20
+  },
+  "method": {
+    "design": "lagged persona-hour panel",
+    "parameter_window": "T",
+    "behavior_window": "T+1",
+    "interpretation": "behavioral evidence and explanatory power, not proof of consciousness or full causality"
+  },
+  "top_public_findings": [
+    {
+      "parameter": "threat_body_signal",
+      "later_outcome": "next_message_count",
+      "pearson_r": 0.8345
+    },
+    {
+      "parameter": "arousal",
+      "later_outcome": "next_message_count",
+      "pearson_r": 0.8317
+    },
+    {
+      "parameter": "metacognitive_calibration",
+      "later_outcome": "next_money_pain",
+      "pearson_r": 0.6337
+    },
+    {
+      "parameter": "threat_body_signal",
+      "later_outcome": "next_uptake_relevance",
+      "pearson_r": 0.4746
+    },
+    {
+      "parameter": "procedural_strength",
+      "later_outcome": "next_direct_interactions",
+      "pearson_r": 0.3786
+    }
+  ]
+}
+

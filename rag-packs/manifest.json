@@ -40,6 +40,12 @@
       "purpose": "Evidence patterns for safety claims, red-team cases, and release boundaries."
     },
     {
+      "pack": "rolling-cognition-audit",
+      "file": "rolling-cognition-audit-v0.1.jsonl",
+      "namespace": "evaluation",
+      "purpose": "Lagged parameter-to-behavior audit patterns for continuously self-updating agents."
+    },
+    {
       "pack": "battlenix-reasoning-seeds",
       "file": "battlenix-reasoning-seeds-v0.1.jsonl",
       "namespace": "ordered-reasoning",

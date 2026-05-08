@@ -14,6 +14,7 @@ can disconnect this feed and train their own local brain.
 - anti-template and mode-collapse corrections
 - social intelligence metric definitions
 - live pilot evidence summaries
+- rolling cognition audit summaries
 
 ## What the Feed Must Not Include
 
@@ -73,3 +74,8 @@ Example:
   }
 }
 ```
+
+Rolling cognition audit items should follow the same boundary. They may include
+parameter names, aggregate row counts, lagged correlations, sanitized panel
+metrics, and report URLs. They must not include raw conversations or one-on-one
+chat text.
