@@ -91,6 +91,11 @@ chatbot. It is a compact local decision brain that learns routing, risk,
 approval, file-vault retrieval, and publication boundaries from RAG packs,
 MASL policy, live simulation feedback, and owner corrections.
 
+Put differently: most Agent Skills make an agent better at doing a specific
+thing. **Afu Brain LLM / Afu Model** makes the agent better at deciding which
+skill should run, whether it is safe to run, what must be prepared first, and
+what must wait for the owner.
+
 The first synapse engine is now executable. It converts owner memory, public RAG
 lessons, repeated language checks, and OpenClaw policy into an inspectable
 `BrainDecision`: meaning trace, synapse updates, style contract, publication
@@ -309,18 +314,20 @@ Private-by-design components:
 
 ## How It Works
 
-Afu Brain separates a personal agent into three responsibilities.
+Afu Brain separates a personal agent into four responsibilities.
 
 | Layer | Responsibility | Public in this repo |
 |---|---|---|
 | Afu / Alfred | hears the human, collects context, owns private memory | schema and integration docs |
-| Afu Brain | classifies intent, upgrades risk, routes skills, enforces MASL | reference gate and policies |
+| Afu Brain LLM / Afu Model | learns owner-specific routing, risk, approval, and skill-selection decisions | synapse engine, RAG packs, decision contract |
+| Afu Brain MASL gate | validates decisions, upgrades risk, blocks unsafe execution | reference gate and policies |
 | OpenClaw | executes tools, files, browser, home, or environment actions | adapter contract and skill entry |
 
 The model can propose a decision. It cannot directly authorize execution.
 
 ```text
 model_output
+  -> Afu Brain LLM / Afu Model route proposal
   -> schema validation
   -> intent allowlist
   -> risk upgrade

@@ -12,6 +12,10 @@ or router distilled from RAG packs, MASL policies, owner corrections, and live
 simulation feedback. It is not a generic chatbot; it is the decision layer that
 decides what the assistant may do.
 
+Use **Afu Brain LLM** when the audience needs the contrast with Agent Skills:
+Skills make an agent better at a specific workflow; Afu Brain LLM makes the
+agent better at skill selection, risk reading, approval timing, and refusal.
+
 ## Launch Lines
 
 ```text
@@ -23,6 +27,11 @@ The executor acts only after MASL says it is safe.
 ```text
 Hermes learns skills. Afu Brain decides when a skill must not run.
 OpenClaw gives agents hands. Afu Brain gives them judgment.
+```
+
+```text
+Most skills strengthen execution.
+Afu Brain LLM strengthens judgment before execution.
 ```
 
 ```text

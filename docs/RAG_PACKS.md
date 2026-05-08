@@ -149,5 +149,10 @@ Step 4: distill high-frequency behavior into a nano decision model
 Step 5: keep RAG as the update and memory layer
 ```
 
+This is where Afu Brain LLM / Afu Model belongs. Skills teach the executor how
+to do a task. RAG packs teach the local decision brain when to select a skill,
+when to gate it, when to block it, and how new corrections become future routing
+constraints.
+
 This lets Afu Brain save expensive model calls immediately while keeping policy
 updates inspectable.

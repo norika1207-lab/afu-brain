@@ -14,6 +14,11 @@ Use this skill before executing high-impact tools, generated skills, external
 communication, deletion, payment, contract/legal workflows, or ambiguous owner
 requests.
 
+This skill is the OpenClaw / AgentSkills entry point for Afu Brain LLM / Afu
+Model. Normal skills tell the executor how to do one task. Afu Brain decides
+which skill chain should run, whether it is safe, whether preparation is allowed,
+and whether owner approval is required before final action.
+
 ## Rule
 
 Never execute irreversible actions directly from raw human language.
@@ -59,4 +64,3 @@ Expected decision:
   "skills": ["files.read", "contract.red_flags", "approval.before_send"]
 }
 ```
-

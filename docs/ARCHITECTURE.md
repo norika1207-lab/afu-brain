@@ -6,7 +6,7 @@ Afu Brain is a MASL reference stack:
 Human principal
   -> Afu / Alfred interface
   -> private owner memory
-  -> Afu Brain recomputation
+  -> Afu Brain LLM / Afu Model route judgment
   -> MASL safety gate
   -> OpenClaw / executor
   -> result and owner feedback
@@ -70,10 +70,13 @@ Users may subscribe to this layer or disconnect and train their own.
 ## Afu Model
 
 Afu Model is the small local decision brain direction inside this architecture.
-It is not the voice interface and it is not a general chat LLM. It compresses
-repeated safe decisions, RAG lessons, MASL policies, file-vault routes, and owner
-corrections into a local router that can emit inspectable decision fields before
-tools execute.
+It is not the voice interface, not a general chat LLM, and not just another
+Agent Skill. A normal skill makes an agent better at one workflow. Afu Model
+makes the agent better at choosing, gating, and refusing skills.
+
+It compresses repeated safe decisions, RAG lessons, MASL policies, file-vault
+routes, and owner corrections into a local router that can emit inspectable
+decision fields before tools execute.
 
 ## Layer 4: MASL Gate
 

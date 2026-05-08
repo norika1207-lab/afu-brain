@@ -11,6 +11,12 @@ Afu Brain gives them judgment before execution.
 ```
 
 ```text
+Skills make agents better at doing tasks.
+Afu Brain LLM decides which skill should run, whether it is safe, and when the
+owner must approve.
+```
+
+```text
 Models can propose.
 Tools can act.
 Afu Brain decides whether action should happen at all.
@@ -37,7 +43,8 @@ Agents already have hands.
 They need judgment before execution.
 
 Alfred listens.
-Afu Model / Afu Brain turns memory into decision parameters.
+Afu Brain LLM / Afu Model turns memory into decision parameters.
+It routes skills, reads risk, and decides when not to execute.
 MASL blocks or approval-gates unsafe action.
 OpenClaw executes only what survives the gate.
 
@@ -65,6 +72,10 @@ working on memory-core / gateway / skills / channel reliability.
 ```text
 OpenClaw agents already have hands: tools, channels, browsers, files, scheduled
 tasks, and skills.
+
+Most skills make the agent better at a task.
+Afu Brain LLM / Afu Model makes the agent better at choosing, gating, and
+refusing skills.
 
 The next hard problem is behavior proof:
 
@@ -117,7 +128,9 @@ They need judgment before execution.
 Afu Brain is a model-agnostic safety + decision layer between a human-facing assistant and an executor like OpenClaw.
 
 Alfred listens.
-Afu Model / Afu Brain turns memory into decision parameters.
+Afu Brain LLM / Afu Model turns memory into decision parameters.
+It decides which skill should run, which action needs approval, and which action
+must stop.
 MASL blocks or approval-gates unsafe actions.
 OpenClaw executes only what survives the gate.
 
@@ -258,7 +271,8 @@ https://github.com/norika1207-lab/afu-brain
 Afu Brain 的位置是：
 
 Alfred 聽懂人類。
-Afu Model / Afu Brain 把長期記憶轉成決策參數。
+Afu Brain LLM / Afu Model 把長期記憶轉成決策參數。
+它決定該跑哪個 skill、哪個動作要先問主人、哪個動作必須擋下。
 MASL 擋下或 approval-gate 高風險行動。
 OpenClaw 只執行通過 gate 的動作。
 

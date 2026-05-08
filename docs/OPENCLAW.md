@@ -3,6 +3,13 @@
 OpenClaw is treated as the executor. Afu Brain is the decision layer before the
 executor.
 
+In the current agent ecosystem, most Skills make OpenClaw better at a concrete
+capability: files, browser, calendars, email, deployment, analysis, or another
+tool workflow. Afu Brain LLM / Afu Model is the layer above those Skills. It
+learns the owner's routing and risk patterns, selects the smallest safe skill
+chain, and decides whether execution should be allowed, prepared, approval-gated,
+or blocked.
+
 It also provides a behavior-proof pattern for OpenClaw-style memory, gateway,
 skill, and safety changes:
 
@@ -21,7 +28,8 @@ OpenClaw receives constrained plans, not raw ambiguous human intent.
 
 ```text
 owner request
-  -> Afu Brain decision
+  -> Afu Brain LLM / Afu Model route judgment
+  -> MASL validation and approval gate
   -> OpenClaw constrained plan
   -> execution result
   -> owner feedback
@@ -48,6 +56,16 @@ owner request
 - Do not perform `blocked_final_action`.
 - Return structured result and side effects.
 - Let Afu Brain update memory from owner feedback.
+
+## Skill Strength Mapping
+
+| Layer | What gets stronger |
+|---|---|
+| Normal Agent Skill | one repeatable task or tool workflow |
+| OpenClaw executor | action surface: files, browser, channels, home, CLI, APIs |
+| Afu Brain LLM / Afu Model | skill selection, owner memory use, risk reading, approval timing |
+| MASL gate | deterministic refusal, confirmation, and blocked-action enforcement |
+| RAG / rolling cognition | update path: new lessons become future routing constraints |
 
 ## Behavior Proof for OpenClaw Changes
 

@@ -21,6 +21,11 @@ the open decision layer that other builders can run with their own accounts.
 **Afu Model** is the small local decision brain direction inside Afu Brain. It is
 not a general chat LLM.
 
+It is also not just another Agent Skill. A normal skill teaches the agent how to
+perform one repeatable workflow. Afu Model learns when those skills should run,
+which skill chain is smallest and safest, and when the owner must be asked before
+the executor touches the outside world.
+
 It is meant to compress repeated safe decisions from:
 
 - private owner memory
