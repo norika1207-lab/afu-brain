@@ -5,7 +5,7 @@ description = "An OpenClaw-compatible, model-agnostic butler brain that turns pr
 requires-python = ">=3.10"
 authors = [{ name = "Norika Oda" }]
 license = { text = "Apache-2.0" }
-keywords = ["openclaw", "ai-agents", "agent-safety", "masl", "local-first", "personal-ai"]
+keywords = ["openclaw", "ai-agents", "agent-safety", "masl", "local-first", "personal-ai", "behavior-proof", "memory-core", "rolling-cognition"]
 
 [project.scripts]
 afu-brain-rag = "afu_brain.rag_cli:main"

@@ -92,6 +92,11 @@ The main public claim is narrow:
 Rolling parameters have measurable explanatory power over later behavior.
 ```
 
+For OpenClaw-style projects, this is a reusable behavior-proof pattern for
+changes to `memory-core`, channel routing, session lifecycle, skill execution,
+and safety gates. It gives contributors a way to show that a memory or cognition
+change affected later behavior without publishing private logs.
+
 That is different from claiming full causality or consciousness. It is still an
 important step beyond "the agent remembered something" because it tests whether
 the memory/parameter layer changes later behavior.

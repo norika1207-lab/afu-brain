@@ -5,11 +5,11 @@
 <h1 align="center">Afu Brain</h1>
 
 <p align="center">
-  <strong>The local brain for tool-using AI agents.</strong>
+  <strong>Behavior proof, memory judgment, and safety gates for OpenClaw-compatible agents.</strong>
 </p>
 
 <p align="center">
-  Models can propose. Tools can act. Afu Brain decides whether action should happen at all.
+  Models can propose. Tools can act. Afu Brain proves whether memory changed later behavior, then decides whether action should happen at all.
 </p>
 
 <p align="center">
@@ -44,6 +44,8 @@
   <img alt="Status" src="https://img.shields.io/badge/status-open%20technical%20preview-111827">
   <img alt="Safety" src="https://img.shields.io/badge/MASL-model--agnostic%20safety-0f766e">
   <img alt="Memory" src="https://img.shields.io/badge/memory-local--first-7c3aed">
+  <img alt="Behavior Proof" src="https://img.shields.io/badge/behavior--proof-rolling%20cognition-0e7490">
+  <img alt="OpenClaw" src="https://img.shields.io/badge/OpenClaw-compatible-f97316">
   <img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-2563eb">
 </p>
 
@@ -93,6 +95,19 @@ The first synapse engine is now executable. It converts owner memory, public RAG
 lessons, repeated language checks, and OpenClaw policy into an inspectable
 `BrainDecision`: meaning trace, synapse updates, style contract, publication
 gate, cost route, and tool boundary.
+
+For OpenClaw builders, Afu Brain focuses on the missing evidence layer around
+`memory-core`, skill execution, and agent safety:
+
+```text
+memory event at T
+  -> cognition parameter update
+  -> behavior at T+1
+  -> proof that the parameter changed later behavior
+```
+
+That makes it useful when maintainers ask for real behavior proof, not only a
+mock, prompt, or subjective demo.
 
 It is not only a policy table. Lobster Brain is also being pressure-tested in
 eight live decision-simulation arenas, where agents must make uncertain calls,
@@ -163,6 +178,10 @@ The newest evidence layer is a rolling cognition audit: parameters at time `T`
 are tested against behavior quality at `T+1`. It asks whether a growing agent's
 parameters explain later interaction quality, uptake, risk respect, and template
 cleanliness.
+
+This is the same kind of artifact OpenClaw contributors need when a PR changes
+memory, session behavior, tool execution, or safety policy: a lagged,
+parameter-to-behavior audit that can be inspected without exposing private logs.
 
 Read the public summaries in [`docs/EVIDENCE.md`](docs/EVIDENCE.md) and
 [`docs/ROLLING_COGNITION_AUDIT.md`](docs/ROLLING_COGNITION_AUDIT.md).

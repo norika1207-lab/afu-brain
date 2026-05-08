@@ -57,6 +57,51 @@ Demo:
 https://charenix.com/static/alfred-lobster-brain-demo.html
 ```
 
+## OpenClaw Community Post
+
+Use this version when speaking to OpenClaw builders, plugin authors, or people
+working on memory-core / gateway / skills / channel reliability.
+
+```text
+OpenClaw agents already have hands: tools, channels, browsers, files, scheduled
+tasks, and skills.
+
+The next hard problem is behavior proof:
+
+When memory changes, how do we prove the agent's later behavior actually got
+better?
+
+I added a rolling cognition audit to Afu Brain:
+
+event stream -> parameter update -> next behavior window -> measurable behavior change
+
+The first public artifact uses a lagged persona-hour panel:
+- 151,083 cognitive signal rows
+- 464,097 lounge messages
+- 302,758 conversation interactions
+- 1,743 persona-hour panel rows
+- 140 parameter/outcome tests
+
+It does not claim consciousness or full causality.
+It asks a narrower OpenClaw-native question:
+
+Do parameters at T explain behavior quality at T+1?
+
+This is meant as a behavior-proof layer for memory-core, agent safety, skill
+execution, channel routing, and anti-template work.
+
+GitHub:
+https://github.com/norika1207-lab/afu-brain
+
+Method:
+https://github.com/norika1207-lab/afu-brain/blob/main/docs/ROLLING_COGNITION_AUDIT.md
+
+Public report:
+https://charenix.com/static/reports/lobster-brain-parameter-proof-20260508.html
+
+#OpenClaw #AIAgents #AgenticAI #AISafety #Memory #RAG #OpenSourceAI
+```
+
 ## X / Twitter Launch
 
 Use this when you want to connect the project directly to the OpenClaw / Hermes

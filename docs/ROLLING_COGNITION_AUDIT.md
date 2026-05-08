@@ -3,6 +3,13 @@
 This note documents the public evaluation pattern behind the Lobster/Afu rolling
 brain work.
 
+For OpenClaw and other tool-using agent stacks, this is a behavior-proof pattern
+for memory-core changes:
+
+```text
+Did memory or cognition parameters at T measurably change behavior at T+1?
+```
+
 It does not claim consciousness, general intelligence, or peer-reviewed safety.
 It makes a narrower claim:
 
@@ -15,6 +22,16 @@ later behavior better than prose alone.
 
 Most memory-agent demos show that an agent can recall something. That is useful,
 but it is not enough.
+
+OpenClaw-style systems need a harder proof standard because memory changes can
+affect tools, channels, scheduled tasks, file access, and external actions. A
+memory layer should be able to answer:
+
+- Did the agent become less repetitive?
+- Did it route safer?
+- Did it respect risk more?
+- Did it form clearer direct interactions?
+- Did it adopt corrections in later behavior?
 
 A continuously learning agent should expose a stronger evidence chain:
 
@@ -167,6 +184,30 @@ Recommended outcome families:
 - owner correction adoption
 - risk-respect behavior
 
+## OpenClaw Mapping
+
+This audit is especially relevant to OpenClaw PRs or forks that touch:
+
+- `memory-core` and context retrieval
+- agent runtime/session lifecycle
+- skill/tool execution
+- channel integrations and reply routing
+- config safety and update/doctor repair flows
+- anti-template or repeated output suppression
+- approval gates before external action
+
+Instead of only saying "the agent remembered more", the audit asks whether the
+memory change predicts the next behavior window.
+
+Example proof shape for a PR:
+
+```text
+Change: memory retrieval now preserves sibling supplement results.
+Metric: next_uptake_relevance and next_direct_rate.
+Proof: parameter windows after retrieval improvement produce higher T+1
+behavior quality than comparable lower-parameter windows.
+```
+
 Recommended release boundary:
 
 - publish schemas, aggregate counts, correlations, and sanitized panel rows
@@ -174,4 +215,3 @@ Recommended release boundary:
   dumps
 - clearly label lagged correlations as behavioral evidence, not proof of
   consciousness or full causality
-
